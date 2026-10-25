@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Products – Athios{% endblock %}
+{% block desc %}Everything Athios offers: a chat with memory, code blocks, search, export and more.{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='css/products.css') }}">{% endblock %}
+{% block main %}
+<main id="top">
+<section class="wrap pg-hero">
+ <h1>Products</h1>
+ <p class="lead">Everything Athios offers today, in one place.</p>
+</section>
+
+<div class="wrap">
+<section class="prod rv">
+ <div>
+  <h2>Athios Chat</h2>
+  <p>A familiar chat window with memory built in. Ask a question, close the tab, and come back later: your conversations are waiting in the sidebar.</p>
+  <ul class="ticks">
+   <li>Sidebar with every chat, grouped by day and searchable</li>
+   <li>Replies stream in as they are written, with copyable code blocks</li>
+   <li>Stop or regenerate any reply</li>
+   <li>Export a chat as a Markdown file</li>
+  </ul>
+  <a class="btn pri" data-tip="Opens a new chat" href="/chat">Open Athios Chat</a>
+ </div>
+ <div class="pimg"><img src="{{ url_for('static', filename='img/hero-orbit.jpg') }}" alt="" aria-hidden="true" loading="lazy"></div>
+</section>
+
+<section class="pr-sec">
+ <h2 class="rv">What it does</h2>
+ {% include "_cards.html" %}
+ <ul class="mini rv">
+  <li>Code blocks with one-click copy</li><li>Regenerate or stop a reply</li><li>Search and group your chats</li>
+  <li>Export any chat as Markdown</li><li>Adjust creativity and reply length</li><li>Light and dark themes</li>
+ </ul>
+</section>
+
+<section class="pr-sec">
+ <h2 class="rv">What you can use it for</h2>
+ <div class="uses rv">
+  <h3>Questions and explanations</h3><p>Get a concept explained step by step.</p><span>Explain how a transformer works</span>
+  <h3>Basic conversation</h3><p>Engage in natural, everyday discussions with our AI</p><span>It can answer FAQs, greet your visitors, and handle casual small talk effortlessly</span>
+  <h3>Study support</h3><p>Quick revision notes and walkthroughs.</p><span>Make revision notes on photosynthesis</span>
+  <h3>General knowledge</h3><p>Test the ai's trivia skills or ask complex questions about world history, science, geography and current events</p><span> Popular</span>
+  <h3>Brainstorming</h3><p>Bounce ideas back and forth.</p><span>Help me brainstorm project ideas</span></a>
+  <h3>English</h3><p>Improve your grammar , practice conversational vocabulary</p><span>Refine your writing skills with interactive AI feedback</span></a>
+ </div>
+</section>
+
+<section class="endcta rv">
+ <h2>Try Athios Chat.</h2>
+ <p class="lead">Create an account and start your first conversation.</p>
+ <div class="cta"><a class="btn pri big" data-tip="Create an account" href="/signup">Sign up</a><a class="btn big" data-tip="Welcome back" href="/login">Sign in</a></div>
+</section>
+</div>
+</main>
+{% endblock %}

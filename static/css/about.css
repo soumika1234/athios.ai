@@ -1,0 +1,39 @@
+/* About page. Loaded after style.css (uses its colour variables). */
+.about{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:4rem;align-items:center}
+.about p{color:var(--muted);margin:1rem 0 0;max-width:30em}
+.about ul{list-style:none;margin:1.5rem 0 0;padding:0}
+.about li{padding:.55rem 0 .55rem 1.6rem;position:relative;border-top:1px solid var(--line);font-weight:600}
+.about li::before{content:"";position:absolute;left:.2rem;top:1.05rem;width:.55rem;height:.55rem;border-radius:2px;background:var(--accent)}
+.orbpanel{position:relative;border-radius:36px;overflow:hidden;background:#000;aspect-ratio:16/10;box-shadow:0 40px 70px -40px rgba(21,101,230,.7)}
+.orbpanel img{width:100%;height:100%;object-fit:cover;display:block;animation:kb 20s ease-in-out infinite alternate}
+.ab-hero{text-align:center;padding:4rem 0 1rem}
+.ab-hero>*{animation:in .8s cubic-bezier(.2,.7,.2,1) both}
+.ab-hero p{animation-delay:.12s}
+.ab-hero h1{font-size:clamp(2.4rem,6.5vw,4.4rem);font-weight:800;letter-spacing:-.03em}
+.ab-story{padding:3rem 0 0}
+.about h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+.ab-sec{padding:5.5rem 0 0}
+.ab-sec>h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:1.8rem}
+.stand article{padding:1.8rem;border:1px solid var(--line);border-radius:26px;background:var(--surface);transition:transform .4s var(--sp),box-shadow .3s,border-color .25s,background-color .35s}
+.stand article:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 30px 44px -30px rgba(10,35,81,.55)}
+.stand span{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:14px;background:var(--soft);color:var(--accent);font:800 1rem Sora,system-ui,sans-serif;margin-bottom:1rem}
+.stand h3{font-size:1.25rem;margin-bottom:.5rem}
+.stand p{margin:0;color:var(--muted)}
+.faq{max-width:820px;display:grid;gap:.8rem}
+.faq details{border:1px solid var(--line);border-radius:20px;background:var(--surface);transition:border-color .25s,box-shadow .3s,background-color .35s}
+.faq details[open]{border-color:var(--accent);box-shadow:0 20px 40px -30px rgba(21,101,230,.7)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.1rem 1.4rem;font-weight:700}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--soft);color:var(--accent);font-weight:800;transition:transform .35s var(--sp)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0;padding:0 1.4rem 1.2rem;color:var(--muted);animation:in .4s both}
+.endcta .cta{justify-content:center;margin-top:1.8rem}
+@media (max-width:900px){.about{grid-template-columns:minmax(0,1fr);gap:1.75rem}.stand{grid-template-columns:minmax(0,1fr)}.stand>*{grid-area:auto!important}.vision{min-height:380px}.ab-sec{padding-top:3.5rem}.orbpanel{border-radius:24px}.ab-hero{padding-top:2.5rem}}
+.stand{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr) minmax(0,1fr);gap:1.25rem}
+.stand .p1{grid-area:1/1}.stand .p2{grid-area:2/1}.stand .p3{grid-area:1/3}.stand .p4{grid-area:2/3}
+.vision{grid-area:1/2/3/3;position:relative;overflow:hidden;border-radius:30px;min-height:430px;display:flex;align-items:flex-end;color:#fff;background:#050d1f;box-shadow:0 40px 70px -40px rgba(21,101,230,.75)}
+.vision img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kb 22s ease-in-out infinite alternate}
+.vision::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,13,31,0) 40%,rgba(5,13,31,.92))}
+.vtxt{position:relative;z-index:2;padding:1.8rem}
+.vtxt h3{font-size:1.8rem;font-weight:800;margin-bottom:.6rem}
+.vtxt p{margin:0;color:#d4e1fb;line-height:1.55}

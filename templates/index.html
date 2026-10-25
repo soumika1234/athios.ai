@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block main %}
+<main id="top">
+<section class="wrap hero">
+ <div class="mk" aria-hidden="true"><span class="tile big"><span class="hm"><img src="{{ url_for('static', filename='img/mark-anim.png') }}" alt=""><i style="left:36.18%;--d:0s"></i><i style="left:47.36%;--d:.15s"></i><i style="left:58.55%;--d:.3s"></i></span></span></div>
+  <h1><span class="w" style="--w:0">AI</span> <span class="w" style="--w:1">that</span> <span class="w" style="--w:2"><em>understands</em></span> <span class="w" style="--w:3">you.</span></h1>
+ <p class="lead" style="--i:3">Athios is a chat assistant with memory that lasts. Ask a question, close the tab, and pick the conversation up again whenever you like.</p>
+ <form class="ask" style="--i:4" action="/chat" method="get" role="search">
+  <label class="sr" for="ask">Ask Athios</label>
+  <input id="ask" name="prompt" type="text" autocomplete="off" placeholder="Ask Athios anything">
+  <button class="send" type="submit" data-tip="Send" aria-label="Send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+ </form>
+ <div class="chips" style="--i:5">
+  <a class="chip" data-tip="Try this prompt" href="/chat?prompt=Explain+how+a+transformer+works">Explain how a transformer works</a>
+  <a class="chip" data-tip="Try this prompt" href="/chat?prompt=Make+revision+notes+on+photosynthesis">Revision notes on photosynthesis</a>
+  <a class="chip" data-tip="Try this prompt" href="/chat?prompt=Help+me+brainstorm+project+ideas">Brainstorm project ideas</a>
+ </div>
+</section>
+
+<div class="wrap"><div class="banner rv"><img src="{{ url_for('static', filename='img/hero-orbit.jpg') }}" alt="" aria-hidden="true"><span class="gl g1">Understands context</span><span class="gl g2">Remembers conversations</span><span class="gl g3">Always ready to talk</span></div></div>
+
+<div class="marq" aria-hidden="true"><div><span>Questions</span><span>Drafts</span><span>Summaries</span><span>Study notes</span><span>Brainstorming</span><span>Explanations</span><span>Questions</span><span>Drafts</span><span>Summaries</span><span>Study notes</span><span>Brainstorming</span><span>Explanations</span></div></div>
+
+<div class="wrap">
+<section class="show rv">
+ <img class="bgimg" src="{{ url_for('static', filename='img/memory-network.jpg') }}" alt="" aria-hidden="true" loading="lazy">
+ <div>
+  <h2>Pick up where you left off.</h2>
+  <p>Athios keeps your conversations and brings back what matters when you return. Browse, rename or delete any chat whenever you want.</p>
+  <a class="btn pri" data-tip="Opens a new chat" href="/chat">Start chatting</a>
+ </div>
+ <div class="chat" role="img" aria-label="Example: Athios recalls a Tuesday revision plan when the user returns on Friday">
+  <p class="day plain" style="--i:0">Tuesday</p>
+  <p class="m u" style="--i:1">Help me plan revision for my networks exam.</p>
+  <p class="m b" style="--i:2">Start with the OSI layers, then routing. Want a three-day plan?</p>
+  <p class="m u" style="--i:3">Yes, three days.</p>
+  <p class="day mem" style="--i:4">Friday</p>
+  <p class="m u" style="--i:5">Let's continue my revision plan.</p>
+  <p class="m b typing" style="--i:6"><i></i><i></i><i></i></p>
+  <p class="m b" style="--i:9">Day 1 covered the OSI layers. Today is routing. Ready to begin?<span class="tag">Recalled from your Tuesday chat</span></p>
+ </div>
+</section>
+
+<section class="sec">
+ <h2 class="rv">Made for everyday thinking</h2>
+ {% include "_cards.html" %}
+ <p class="more rv"><a class="btn pri big" data-tip="See every feature" href="/products">Explore all products</a></p>
+</section>
+
+<section class="sec does">
+ <div class="does-grid rv">
+  <div class="does-copy">
+   <h2>What it does?</h2>
+   <p class="lead2">Athios reads your message together with the conversation so far, then writes a reply you can use. It keeps every chat, so you can continue later.</p>
+   <ul class="caps">
+    <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg></span><div><h3>Answers questions</h3><p>Clear answers on everyday and school topics.</p></div></li>
+    <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></span><div><h3>Writes and edits</h3><p>Emails, essays, outlines and summaries.</p></div></li>
+    <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg></span><div><h3>Explains step by step</h3><p>Hard ideas broken into simple parts.</p></div></li>
+    <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span><div><h3>Remembers context</h3><p>Brings back earlier messages when they matter.</p></div></li>
+   </ul>
+  </div>
+  <div class="does-art"><img src="{{ url_for('static', filename='img/neural-net.jpg') }}" alt="A glowing neural network" loading="lazy"><span class="gl g1">Reading your prompt</span><span class="gl g2">Recalling earlier chats</span><span class="gl g3">Writing a reply</span></div>
+ </div>
+</section>
+
+<section class="endcta rv">
+ <h2>Start a conversation with Athios.</h2>
+ <a class="btn pri big" data-tip="Opens a new chat" href="/chat">Start chatting</a>
+</section>
+</div>
+</main>
+{% endblock %}

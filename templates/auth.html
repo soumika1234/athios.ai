@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ 'Sign up' if mode == 'signup' else 'Sign in' }} – Athios</title>
+<link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+<script src="{{ url_for('static', filename='js/auth.js') }}" defer></script>
+</head>
+<body class="authpage">
+<aside class="aside">
+ <img src="{{ url_for('static', filename='img/memory-network.jpg') }}" alt="" aria-hidden="true">
+ <a class="brand" href="/"><span class="tile"><img src="{{ url_for('static', filename='img/mark.png') }}" alt=""></span>Athios</a>
+ <h2>Pick up where you left off.</h2>
+ <p>Your chats and memory are ready whenever you are.</p>
+</aside>
+<main class="win">
+ <button id="theme" type="button" data-tip="Light or dark" aria-label="Switch light or dark theme">◐</button>
+ <div class="box">
+  <a class="back" href="/">← Back to home</a>
+  <h1>{{ 'Create your account' if mode == 'signup' else 'Welcome back' }}</h1>
+  <p class="sub">{{ 'Sign up to start chatting with Athios.' if mode == 'signup' else 'Sign in to continue your conversations.' }}</p>
+  <div class="tabs"><a href="{{ url_for('login', next=nxt) }}"{% if mode == 'login' %} class="on"{% endif %}>Sign in</a><a href="{{ url_for('signup', next=nxt) }}"{% if mode == 'signup' %} class="on"{% endif %}>Sign up</a></div>
+  {% if error %}<p class="err" role="alert">{{ error }}</p>{% endif %}
+  <form method="post" action="{{ url_for(mode, next=nxt) }}">
+   <input type="hidden" name="csrf" value="{{ csrf_token() }}">
+   {% if mode == 'signup' %}<label class="fld">Name<input name="name" type="text" autocomplete="name" required value="{{ form.get('name', '') }}"></label>{% endif %}
+   <label class="fld">Email<input name="email" type="email" autocomplete="email" required value="{{ form.get('email', '') }}"></label>
+   <label class="fld">Password<span class="pw"><input id="password" name="password" type="password" autocomplete="{{ 'new-password' if mode == 'signup' else 'current-password' }}" minlength="{{ 8 if mode == 'signup' else 1 }}" required><button class="eye" type="button">Show</button></span></label>
+   <button class="btn pri big" type="submit">{{ 'Create account' if mode == 'signup' else 'Sign in' }}</button>
+  </form>
+  <p class="swap">{% if mode == 'signup' %}Already have an account? <a href="{{ url_for('login', next=nxt) }}">Sign in</a>{% else %}New to Athios? <a href="{{ url_for('signup', next=nxt) }}">Create an account</a>{% endif %}</p>
+ </div>
+</main>
+</body>
+</html>

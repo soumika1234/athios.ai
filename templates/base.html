@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{% block title %}Athios – AI that understands you{% endblock %}</title>
+<meta name="description" content="{% block desc %}Athios is a chat assistant with memory that lasts.{% endblock %}">
+<link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% block head %}{% endblock %}
+<script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+</head>
+<body>
+<div class="bg" aria-hidden="true"><i style="--b:var(--accent);--p:-.12;left:-12%;top:-10%"></i><i style="--b:var(--sky);--p:-.2;right:-14%;top:30%"></i><i style="--b:var(--accent);--p:-.08;left:28%;top:78%"></i></div>
+<header>
+<div class="wrap bar">
+ <a class="brand" href="/" aria-label="Athios home"><span class="tile"><img src="{{ url_for('static', filename='img/mark.png') }}" alt=""></span>Athios</a>
+ <nav aria-label="Main">
+  <a href="/" data-nav="home"{% if active == 'home' %} class="on"{% endif %}>Home</a>
+  <a href="/products" data-nav="products"{% if active == 'products' %} class="on"{% endif %}>Products</a>
+  <a href="/about" data-nav="about"{% if active == 'about' %} class="on"{% endif %}>About</a>
+ </nav>
+ <div class="auth">
+  {% if user %}<a class="btn sm pri" data-tip="Go to your chats" href="/chat">Open chat</a><a class="btn sm" href="/logout">Sign out</a>
+  {% else %}<a class="btn sm" data-tip="Welcome back" href="/login">Sign in</a><a class="btn sm pri" data-tip="Create an account" href="/signup">Sign up</a>{% endif %}
+ </div>
+</div>
+</header>
+
+{% block main %}{% endblock %}
+
+<footer>
+<div class="wrap foot">
+ <div><span class="tile wide"><img src="{{ url_for('static', filename='img/logo-full.png') }}" alt="Athios – AI that understands you"></span></div>
+ <div><h4>Product</h4><ul><li><a href="/chat">Chat</a></li><li><a href="/products">Features</a></li><li><a href="/login">Sign in</a></li></ul></div>
+  <div><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy policy</a></li><li><a href="/terms">Terms</a></li></ul></div>
+</div>
+<div class="wrap copy"><span>© <span id="yr">2026</span> Athios</span><button id="theme" type="button" data-tip="Light or dark" aria-label="Switch light or dark theme">◐</button></div>
+</footer>
+<a class="up" href="#top" aria-label="Back to top">↑</a>
+</body>
+</html>

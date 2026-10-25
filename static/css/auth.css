@@ -1,0 +1,28 @@
+/* Login and sign-up page. Loaded after style.css (uses its colour variables). */
+.authpage{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);min-height:100dvh}
+.aside{position:relative;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;gap:.8rem;padding:3.2rem;background:var(--navy)}
+.aside>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kb 24s ease-in-out infinite alternate}
+.aside::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(5,13,31,.25),rgba(5,13,31,.88))}
+.aside>:not(img){position:relative;z-index:2}
+.aside .brand{position:absolute;top:2rem;left:3.2rem;color:#fff}
+.aside h2{font-size:clamp(1.8rem,3.2vw,2.8rem);max-width:11em}
+.aside p{margin:0;color:#c9d8f5;max-width:26em}
+.win{position:relative;display:grid;place-content:center;padding:2rem 1.25rem}
+.win #theme{position:absolute;top:1.25rem;right:1.25rem}
+.box{width:min(420px,100%);animation:pop .7s var(--sp) both}
+.back{display:inline-block;color:var(--muted);text-decoration:none;font-weight:600;margin-bottom:1.5rem}.back:hover{color:var(--ink)}
+.box h1{font-size:2rem;font-weight:800;letter-spacing:-.02em}
+.sub{color:var(--muted);margin:.5rem 0 0}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;border-radius:999px;background:var(--soft);margin:1.5rem 0}
+.tabs a{text-align:center;padding:.55rem;border-radius:999px;text-decoration:none;font-weight:700;color:var(--muted);transition:background-color .3s,color .3s}
+.tabs a.on{background:var(--surface);color:var(--ink);box-shadow:0 6px 16px -8px rgba(10,35,81,.5)}
+.fld{display:grid;gap:.4rem;margin-bottom:1rem;font-weight:600;font-size:.92rem}
+.fld input{width:100%;border:1.5px solid var(--line);border-radius:14px;padding:.85rem 1rem;background:var(--surface);color:var(--ink);font:500 1rem Manrope,system-ui,sans-serif;transition:border-color .25s,box-shadow .25s}
+.fld input:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 20%,transparent)}
+.pw{position:relative;display:block}.pw input{padding-right:4.5rem}
+.eye{position:absolute;right:.5rem;top:50%;translate:0 -50%;border:0;background:none;color:var(--accent);font:700 .85rem Manrope,sans-serif;cursor:pointer;padding:.4rem .6rem}
+.err{margin:0 0 1rem;padding:.7rem 1rem;border-radius:12px;font-weight:600;background:color-mix(in srgb,#e5484d 14%,var(--surface));color:color-mix(in srgb,#d12f36 75%,var(--ink));border:1px solid color-mix(in srgb,#e5484d 40%,transparent);animation:shake .4s}
+.box .btn.pri{width:100%;text-align:center;margin-top:.4rem}
+.swap{text-align:center;color:var(--muted);margin-top:1.2rem}.swap a{color:var(--accent);font-weight:700}
+@keyframes shake{25%{translate:-6px 0}75%{translate:6px 0}}
+@media (max-width:900px){.authpage{grid-template-columns:minmax(0,1fr)}.aside{display:none}}

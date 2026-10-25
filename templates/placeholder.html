@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} – Athios</title>
+<link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<main class="ph">
+ <a class="brand" href="/"><span class="tile"><img src="{{ url_for('static', filename='img/mark.png') }}" alt=""></span>Athios</a>
+ <h1>{{ title }}</h1>
+ <p class="lead">This page is a placeholder. Build it next and connect it to your back end.</p>
+ {% if prompt %}<p class="lead">Your prompt: <b>{{ prompt }}</b></p>{% endif %}
+ <a class="btn pri" href="/">Back to home</a>
+</main>
+</body>
+</html>

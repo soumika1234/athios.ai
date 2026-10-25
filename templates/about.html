@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}About – Athios{% endblock %}
+{% block desc %}Learn what Athios is, what makes it different and how it treats your chats.{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">{% endblock %}
+{% block main %}
+<main id="top">
+<section class="wrap ab-hero">
+ <h1>About Athios</h1>
+ <p class="lead">AI that understands you. Athios is a chat assistant with a memory that lasts, built so you can see how it fits together.</p>
+</section>
+
+<div class="wrap">
+<section class="ab-story">
+ <div class="about rv">
+  <div>
+   <h2>A chat assistant that remembers</h2>
+   <p>Athios is built around a language model that writes one word at a time, the same idea behind today's popular AI assistants. What sets it apart is memory: your conversations are saved to your account, so Athios can recall earlier messages and carry on across sessions.</p>
+   <p>It is designed to be understandable from start to finish, from the text it learns from to the website you are using now.</p>
+   <ul><li>Text conversations: questions, drafts, summaries and study help</li><li>Your chats stay yours: only you can open them</li><li>Delete a chat and its memory goes with it</li></ul>
+  </div>
+  <div class="orbpanel"><img src="{{ url_for('static', filename='img/core-sphere.jpg') }}" alt="" aria-hidden="true" loading="lazy"></div>
+ </div>
+</section>
+
+<section class="ab-sec">
+ <h2 class="rv">What we stand for</h2>
+ <div class="stand rv">
+  <article class="p1"><span>01</span><h3>Memory that helps</h3><p>Conversations are saved per account. Recent messages stay in view and older ones come back when they matter, so you can continue a task over days.</p></article>
+  <article class="p2"><span>02</span><h3>Clear by design</h3><p>People should be able to see how a chat assistant is put together. Athios keeps its parts simple: a model, a memory and a website that fit together.</p></article>
+  <aside class="vision" id="vision">
+   <img src="{{ url_for('static', filename='img/vision-orb.jpg') }}" alt="A glowing globe of connected points" loading="lazy">
+   <div class="vtxt"><h3>Our Vision</h3><p>A future where anyone can talk to an AI that understands them, remembers what matters and is clear about how it works. Athios is a step toward that: a conversation that continues instead of starting over.</p></div>
+  </aside>
+  <article class="p3"><span>03</span><h3>Yours to control</h3><p>Rename, resume or delete any chat. Deleting a chat removes its stored memory, and only you can open your conversations.</p></article>
+  <article class="p4"><span>04</span><h3>Simple to use</h3><p>A clean chat window, quick prompts and clear controls, so anyone can start in seconds.</p></article>
+ </div>
+</section>
+
+<section class="ab-sec">
+ <h2 class="rv">Good to know</h2>
+ <div class="faq rv">
+  <details><summary>Does Athios remember my conversations?</summary><p>Yes. Each chat is saved to your account. When you return, reopen it and Athios continues with the earlier messages in view.</p></details>
+  <details><summary>Can I delete my chats?</summary><p>Yes. Delete any chat from the sidebar and its messages and memory are removed.</p></details>
+  <details><summary>Who can see my chats?</summary><p>Only the account that created them. Passwords are stored as salted hashes, never as plain text.</p></details>
+  <details><summary>What can I use Athios for?</summary><p>Questions, explanations, drafts, summaries, study notes and brainstorming. For now it works with text only.</p></details>
+  <details><summary>How capable is Athios?</summary><p>Athios uses a compact language model, so its answers can be simpler than those of very large assistants. Its memory helps it stay consistent across a conversation.</p></details>
+ </div>
+</section>
+
+<section class="endcta rv">
+ <h2>Ready to talk?</h2>
+ <p class="lead">Start a conversation, or get in touch if you have a question.</p>
+ <div class="cta"><a class="btn pri big" data-tip="Opens a new chat" href="/chat">Start chatting</a><a class="btn big" href="/contact">Contact us</a></div>
+</section>
+</div>
+</main>
+{% endblock %}
