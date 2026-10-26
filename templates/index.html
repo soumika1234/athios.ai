@@ -17,10 +17,28 @@
  </div>
 </section>
 
-<div class="wrap"><div class="banner rv"><img src="{{ url_for('static', filename='img/hero-orbit.jpg') }}" alt="" aria-hidden="true"><span class="gl g1">Understands context</span><span class="gl g2">Remembers conversations</span><span class="gl g3">Always ready to talk</span></div></div>
-
-<div class="marq" aria-hidden="true"><div><span>Questions</span><span>Drafts</span><span>Summaries</span><span>Study notes</span><span>Brainstorming</span><span>Explanations</span><span>Questions</span><span>Drafts</span><span>Summaries</span><span>Study notes</span><span>Brainstorming</span><span>Explanations</span></div></div>
-
+<div class="wrap">
+ <div class="launch rv">
+  <div class="pics">
+   <figure class="pic p-orbit">
+    <img src="{{ url_for('static', filename='img/hero-orbit.jpg') }}" alt="" aria-hidden="true">
+    <div class="gen"><b>ATHIOS-M</b><span>Memory</span></div>
+    <div class="hbox"><b>Memory</b><p>Chats are saved to your account and recalled when they matter.</p><a href="/products">See features →</a></div>
+   </figure>
+   <figure class="pic p-galaxy">
+    <img src="{{ url_for('static', filename='img/galaxy-genesis.jpg') }}" alt="A spiral galaxy and a blue planet">
+    <div class="gen"><b>ATHIOS-1</b><span>Genesis</span></div>
+    <div class="hbox"><b>Genesis</b><p>The first release of the Athios model, built for conversations that continue.</p><a href="/chat">Try ATHIOS-1 →</a></div>
+   </figure>
+  </div>
+  <div class="model">
+   <span class="intro">Introducing</span>
+   <h2><b>ATHIOS-1</b><span>Genesis</span></h2>
+   <p>The first Athios model. It reads, remembers and replies.</p>
+   <a class="btn" data-tip="Opens a new chat" href="/chat">Try ATHIOS-1</a>
+  </div>
+ </div>
+</div>
 <div class="wrap">
 <section class="show rv">
  <img class="bgimg" src="{{ url_for('static', filename='img/memory-network.jpg') }}" alt="" aria-hidden="true" loading="lazy">
