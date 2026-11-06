@@ -9,10 +9,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script>try{if(sessionStorage.getItem('athios-intro')&&!/[?&]intro\b/.test(location.search))document.documentElement.classList.add('no-intro')}catch(e){}</script>
+<noscript><style>#intro{display:none}</style></noscript>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/intro.css') }}">
+<script src="{{ url_for('static', filename='js/intro.js') }}" defer></script>
 {% block head %}{% endblock %}
 <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
 </head>
 <body>
+{% include "_intro.html" %}
 <div class="bg" aria-hidden="true"><i style="--b:var(--accent);--p:-.12;left:-12%;top:-10%"></i><i style="--b:var(--sky);--p:-.2;right:-14%;top:30%"></i><i style="--b:var(--accent);--p:-.08;left:28%;top:78%"></i></div>
 <header>
 <div class="wrap bar">
